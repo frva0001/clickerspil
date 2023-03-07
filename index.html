@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Pirat clickerspil</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+
+   <body>
+      <div id="screen">
+         <div id="game">
+            <div id="game_background"></div>
+            <div id="game_elements">
+               <div id="coin_container">
+                  <img id="coin_sprite" src="images/coin.png " draggable="false" />
+               </div>
+               <div id="diamond1_container">
+                  <img id="diamond1_sprite" src="images/diamond.png" draggable="false" />
+               </div>
+               <div id="diamond2_container">
+                  <img id="diamond2_sprite" src="images/diamond-2.png" draggable="false" />
+               </div>
+               <div id="diamond3_container">
+                  <img id="diamond3_sprite" src="images/diamond-3.png" draggable="false" />
+               </div>
+               <div id="bomb_container">
+                  <img id="bomb_sprite" src="images/bomb.png" draggable="false" />
+               </div>
+               <div id="skull_container">
+                  <img id="skull_sprite" src="images/skull.png" draggable="false" />
+               </div>
+            </div>
+            <div id="game_ui">
+               <div id="score_board">
+                  <span id="money_count">0</span>
+                  <img id="diamond_image" src="images/diamond.png" draggable="false" />
+               </div>
+               <div id="life_board">
+                  <img id="heart1" src="images/heart.png" class="active" draggable="false" />
+                  <img id="heart2" src="images/heart.png" class="active" draggable="false" />
+                  <img id="heart3" src="images/heart.png" class="active" draggable="false" />
+               </div>
+               <div id="time_board">
+                  <div id="time_container">
+                     <div id="time_sprite"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="start">
+            <h1 style="color: black; transform: translate(600px, -120px); margin-top: -90px; font-size: xxx-large">Pirat spil - saml 5000 point.</h1>
+            <h2>POINT</h2>
+            <h2>coin = 100 $</h2>
+            <h2>grøn diamant = 300 $</h2>
+            <h2>lilla diamant = 400 $</h2>
+            <h2>rød diamant = 500 $</h2>
+            <h2>kranie = -1 liv</h2>
+            <h2>bombe = -1 liv</h2>
+            <button id="btn_start">Start</button>
+         </div>
+         <div id="gameover" class="hidden">
+            <h1 style="color: white; transform: translate(1500px, 400px); margin-top: -90px; font-size: xxx-large">Game Over</h1>
+            <button id="btn_try_again">Try again</button>
+         </div>
+         <div id="level_complete" class="hidden">
+            <h1 style="color: white; transform: translate(1475px, 400px); margin-top: -90px; font-size: xx-large">Level Complete!</h1>
+            <button id="btn_restart">Go to start</button>
+         </div>
+      </div>
+
+      <audio id="sound_coin" src="sounds/coin.mp3"></audio>
+      <audio id="sound_diamond1" src="sounds/diamond1.mp3"></audio>
+      <audio id="sound_diamond2" src="sounds/diamond2.mp3"></audio>
+      <audio id="sound_diamond3" src="sounds/diamond3.mp3"></audio>
+      <audio id="sound_skull" src="sounds/skull.mp3"></audio>
+      <audio id="sound_bomb" src="sounds/bomb.mp3"></audio>
+      <audio id="sound_gameOver" src="sounds/gameOver.mp3"></audio>
+      <audio id="sound_levelComplete" src="sounds/levelComplete.mp3"></audio>
+      <audio id="sound_background" src="sounds/background.mp3"></audio>
+
+      <script src="script.js"></script>
+   </body>
+</html>

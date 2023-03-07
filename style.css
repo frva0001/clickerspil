@@ -1,0 +1,386 @@
+#screen {
+   aspect-ratio: 16 / 9;
+
+   display: grid;
+   grid-template: 100% / 100%;
+}
+
+#game {
+   grid-area: 1 / 1;
+
+   display: grid;
+   grid-template: 100% / 100%;
+}
+
+#game_background {
+   grid-area: 1 /1;
+   background-image: url(images/background.png);
+   background-size: cover;
+}
+
+#game_elements {
+   grid-area: 1 /1;
+   overflow: hidden;
+   position: relative;
+}
+
+/* tjek baggrund med de andre. */
+
+/* containers og sprites */
+
+#coin_container {
+   width: 150px;
+   position: absolute;
+   top: 0;
+}
+
+#coin_sprite {
+   width: 100%;
+}
+
+#diamond1_container {
+   width: 120px;
+   position: absolute;
+   top: 0;
+}
+#diamond1_sprite {
+   width: 100%;
+}
+
+#diamond2_container {
+   width: 80px;
+   position: absolute;
+   top: 0;
+}
+
+#diamond2_sprite {
+   width: 100%;
+}
+
+#diamond3_container {
+   width: 90px;
+   position: absolute;
+   top: 0;
+}
+
+#diamond3_sprite {
+   width: 100%;
+}
+
+#skull_container {
+   width: 150px;
+   position: absolute;
+   top: 0;
+}
+
+#skull_sprite {
+   width: 100%;
+}
+
+#bomb_container {
+   width: 130px;
+   position: absolute;
+   top: 0;
+}
+
+#bomb_sprite {
+   width: 100%;
+}
+
+/* positioner */
+
+.position1 {
+   left: 20vw;
+}
+.position2 {
+   left: 32vw;
+}
+.position3 {
+   left: 44vw;
+}
+.position4 {
+   left: 56vw;
+}
+.position5 {
+   left: 68vw;
+}
+.position6 {
+   left: 80vw;
+}
+
+/* game UI */
+
+/* UI */
+
+#game_ui {
+   position: absolute;
+   top: 2vw;
+   right: 1vw;
+   color: white;
+
+   font-size: 2em;
+
+   pointer-events: none;
+}
+
+#score_board {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   gap: 0.1em;
+}
+
+#money_count {
+   white-space: nowrap;
+   text-align: right;
+}
+
+#life_board {
+   margin-block-start: 0.2em;
+   display: grid;
+   grid-template-columns: 1.2em 1.2em 1.2em;
+   z-index: 99999;
+}
+
+#life_board img {
+   width: 100%;
+}
+
+#diamond_image {
+   width: 50px;
+}
+
+.active {
+   opacity: 100%;
+}
+
+.deactive {
+   opacity: 0;
+}
+
+/* andre skærme */
+
+.hidden,
+#gameover.hidden,
+#level_complete.hidden,
+#game.hidden,
+#start.hidden {
+   display: none;
+}
+
+/* generelle animationer */
+
+.falling {
+   animation-name: falling;
+   animation-duration: 3s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+   0% {
+      transform: translate(0, -10vw);
+   }
+
+   100% {
+      transform: translate(0, 56.25vw);
+   }
+}
+
+/* diamond and coin clicking */
+
+.point-click {
+   animation-name: point-click;
+   animation-duration: 0.8s;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: 1;
+   animation-direction: forwards;
+}
+@keyframes point-click {
+   0% {
+      transform: scale(100%);
+   }
+   10% {
+      transform: scale(150%);
+   }
+   100% {
+      transform: scale(10%);
+   }
+}
+
+/* skull and bomb clicking */
+
+.bad-click {
+   animation-name: bad-click;
+   animation-duration: 0.8s;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: 1;
+   animation-direction: forwards;
+}
+@keyframes bad-click {
+   0% {
+      transform: scale(100%);
+   }
+   10% {
+      transform: scale(110%) rotate(22deg);
+   }
+   20% {
+      transform: scale(120%) rotate(-22deg);
+   }
+   30% {
+      transform: scale(130%) rotate(22deg);
+   }
+   40% {
+      transform: scale(140%) rotate(-22deg);
+   }
+   50% {
+      transform: scale(150%);
+   }
+   100% {
+      transform: scale(10%);
+   }
+}
+
+.paused {
+   animation-play-state: paused;
+}
+
+/* game over and level complete */
+
+#gameover {
+   grid-area: 1 /1;
+   background-size: cover;
+   justify-content: center;
+   align-content: center;
+   background-image: url(images/end-screen-loss.png);
+}
+
+#game_over_screen {
+   max-width: 100%;
+   z-index: 9999;
+   height: 1250px;
+   width: -webkit-fill-available;
+}
+
+#level_complete {
+   grid-area: 1 /1;
+   background-size: cover;
+   justify-content: center;
+   align-content: center;
+   background-image: url(images/end-screen.png);
+   height: 100%;
+   margin: 0%;
+}
+
+#level_complete_screen {
+   max-width: 100%;
+   z-index: 9999;
+   height: 1250px;
+   width: -webkit-fill-available;
+}
+
+#start {
+   display: grid;
+   grid-area: 1 /1;
+   background-size: cover;
+   justify-content: center;
+   align-content: center;
+   background-image: url(images/startScreen.png);
+}
+
+#start_screen {
+   max-width: 100%;
+   z-index: 9999;
+   height: 1250px;
+   width: -webkit-fill-available;
+}
+
+#btn_start {
+   padding: 0.5em 1em;
+   font-size: 2em;
+   margin: auto;
+   background-color: orange;
+   color: #fff4bf;
+   border: 10px solid orangered;
+   cursor: pointer;
+   border-radius: 10px;
+
+   transform: translate(800px, -600px);
+}
+
+#btn_try_again {
+   padding: 0.5em 1em;
+   font-size: 2em;
+   margin: auto;
+   background-color: orange;
+   color: #fff4bf;
+   border: 10px solid orangered;
+   cursor: pointer;
+   border-radius: 10px;
+
+   transform: translate(70vw, 20vw);
+}
+
+#btn_restart {
+   padding: 0.5em 1em;
+   font-size: 2em;
+   margin: auto;
+   background-color: orange;
+   color: #fff4bf;
+   border: 10px solid orangered;
+   cursor: pointer;
+   border-radius: 10px;
+
+   transform: translate(70vw, 20vw);
+}
+
+#time_board {
+   position: relative;
+}
+
+#time_container {
+   position: absolute;
+   width: 100%;
+   aspect-ratio: 30/6;
+   border: 2px solid rgb(0, 0, 0);
+   background-color: rgba(208, 204, 204, 0.383);
+   top: 1.6vh;
+   right: 0.2vw;
+}
+
+#time_sprite {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(255, 255, 255);
+   transform-origin: right;
+}
+
+.shrink {
+   animation-name: shrink_kf;
+   animation-duration: 30s;
+   animation-iteration-count: 1;
+   animation-timing-function: linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+   0% {
+      scale: 1 1;
+      background-color: limegreen;
+   }
+   50% {
+      background-color: rgb(255, 230, 0);
+   }
+   100% {
+      scale: 0 1;
+      background-color: red;
+   }
+}
+
+body {
+   margin: 0;
+}
+
+h2 {
+   transform: translate(1000px, 200px);
+}
