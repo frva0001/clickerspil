@@ -401,7 +401,7 @@ function skullRestart() {
    }
    skull.classList.remove("position1", "position2", "position3", "position4", "position5", "position6");
 
-   const p = Math.ceil(Math.random() * 6);
+   const p = Math.ceil(Math.random() * 6 + 1);
    skull.classList.add(`position${p}`);
 }
 
@@ -454,7 +454,7 @@ function bombRestart() {
 
    bomb.classList.remove("position1", "position2", "position3", "position4", "position5", "position6");
 
-   const p = Math.ceil(Math.random() * 6);
+   const p = Math.ceil(Math.random() * 6 + 1);
    bomb.classList.add(`position${p}`);
 }
 
