@@ -304,6 +304,7 @@
    border: 10px solid orangered;
    cursor: pointer;
    border-radius: 10px;
+   z-index: 10000;
 
    transform: translate(800px, -600px);
 }
