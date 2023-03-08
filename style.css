@@ -259,7 +259,7 @@
    max-width: 100%;
    z-index: 9999;
    height: 1250px;
-   width: -webkit-fill-available;
+   /* width: -webkit-fill-available; */
 }
 
 #level_complete {
@@ -276,7 +276,7 @@
    max-width: 100%;
    z-index: 9999;
    height: 1250px;
-   width: -webkit-fill-available;
+   /* width: -webkit-fill-available; */
 }
 
 #start {
@@ -292,7 +292,7 @@
    max-width: 100%;
    z-index: 9999;
    height: 1250px;
-   width: -webkit-fill-available;
+   /* width: -webkit-fill-available; */
 }
 
 #btn_start {
